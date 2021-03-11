@@ -15,6 +15,10 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState('');
 
   function handleCreateNewTask() {
+    if (!newTaskTitle) {
+      return
+    }
+    
     setTasks([
       ...tasks, 
       {
